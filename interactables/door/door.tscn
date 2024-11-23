@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqpmcj6tr5g77"]
+
+[ext_resource type="Script" path="res://interactables/door/door.gd" id="1_64bgl"]
+[ext_resource type="SpriteFrames" uid="uid://dbb34g5ulx7cj" path="res://interactables/door/door_frames.tres" id="1_pfv0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rki1e"]
+size = Vector2(127, 119)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_64bgl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_pfv0n")
+animation = &"open"
+frame = 11
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -31.5)
+shape = SubResource("RectangleShape2D_rki1e")

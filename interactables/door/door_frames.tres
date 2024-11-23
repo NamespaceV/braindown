@@ -1,0 +1,107 @@
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://dbb34g5ulx7cj"]
+
+[ext_resource type="Texture2D" uid="uid://butcdw0iwl1nv" path="res://3td-party/demondoor/!Demon Door.png" id="1_mnk5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l1hp"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvg53"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(720, 960, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmwf3"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(960, 960, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjval"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(1200, 960, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d73rl"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(720, 1200, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi72f"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(960, 1200, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cno70"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(1200, 1200, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvj5u"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(720, 1440, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpmtc"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(960, 1440, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85f63"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(1200, 1440, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugnxh"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(720, 1680, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2rn5"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(960, 1680, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx7s6"]
+atlas = ExtResource("1_mnk5t")
+region = Rect2(1200, 1680, 240, 240)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l1hp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvg53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmwf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjval")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d73rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi72f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cno70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvj5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpmtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85f63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugnxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2rn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx7s6")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=4 uid="uid://dcvw4gc7ucs4v"]
+
+[ext_resource type="TileSet" uid="uid://b8fosj5hp2bf8" path="res://env/platform_tiles.tres" id="1_77xwl"]
+[ext_resource type="PackedScene" uid="uid://0jimfx1ovl77" path="res://player/player.tscn" id="2_81r2q"]
+[ext_resource type="Script" path="res://env/kill_z.gd" id="4_fbf3l"]
+[ext_resource type="PackedScene" uid="uid://bt023rkr0wdd3" path="res://interactables/key/key.tscn" id="5_mrwck"]
+[ext_resource type="PackedScene" uid="uid://cqpmcj6tr5g77" path="res://interactables/door/door.tscn" id="6_oovkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v235"]
+size = Vector2(23, 678)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_283hj"]
+size = Vector2(1177, 20)
+
+[node name="Level1-2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(42, -38)
+tile_map_data = PackedByteArray("AAAAAAwAAAAAAAAAAAAAAA0AAAAAAAEAAAABAAwAAAABAAAAAAABAA0AAAABAAEAAABDAAgAAAACAAAAAABDAAkAAAACAAEAAABEAAgAAAADAAAAAABEAAkAAAADAAEAAAABABkAAAACAAAAAAABABoAAAACAAEAAAACABkAAAADAAAAAAACABoAAAADAAEAAAA9AAgAAAAAAAYAAAA9AAkAAAAAAAcAAAA+AAgAAAABAAYAAAA+AAkAAAABAAcAAAA/AAgAAAACAAYAAAA/AAkAAAACAAcAAABAAAgAAAADAAYAAABAAAkAAAADAAcAAABBAAgAAAAEAAYAAABBAAkAAAAEAAcAAABCAAgAAAAFAAYAAABCAAkAAAAFAAcAAABFAAgAAAAKAAYAAABFAAkAAAAKAAcAAABGAAgAAAALAAYAAABGAAkAAAALAAcAAABHAAgAAAAMAAYAAABHAAkAAAAMAAcAAABIAAgAAAANAAYAAABIAAkAAAANAAcAAAAcACYAAAAIAAoAAAA0AB4AAAAIAAoAAAA5ABgAAAAIAAoAAAAyACQAAAAIAAoAAAAoACYAAAAIAAoAAAAyAAwAAAAIAAoAAAA1ABIAAAAIAAoAAAAxAAYAAAAIAAoAAAALACoAAAAIAAoAAAAHACUAAAAIAAoAAAAAACUAAAAIAAoAAAAMAB8AAAAIAAoAAAA=")
+tile_set = ExtResource("1_77xwl")
+
+[node name="WorldBounds" type="StaticBody2D" parent="."]
+
+[node name="LeftWall" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(-13, 329)
+shape = SubResource("RectangleShape2D_1v235")
+
+[node name="RightWall" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(1164, 329)
+shape = SubResource("RectangleShape2D_1v235")
+
+[node name="KillZ" type="Area2D" parent="."]
+script = ExtResource("4_fbf3l")
+
+[node name="Bottom" type="CollisionShape2D" parent="KillZ"]
+position = Vector2(576.5, 658)
+shape = SubResource("RectangleShape2D_283hj")
+debug_color = Color(0.974344, 0, 0.427458, 0.42)
+
+[node name="Key" parent="." instance=ExtResource("5_mrwck")]
+position = Vector2(72, 416)
+
+[node name="Door" parent="." instance=ExtResource("6_oovkd")]
+position = Vector2(1083, 102)
+next_level_name = "level1-3"
+
+[node name="player" parent="." instance=ExtResource("2_81r2q")]
+position = Vector2(852, 521)
+
+[connection signal="on_pickup" from="Key" to="Door" method="open_door"]

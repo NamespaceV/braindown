@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1qjykx2u1xjx"]
+
+[sub_resource type="GDScript" id="GDScript_poqm7"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	$RichTextLabel.text = \"[center]THE END\\ndeaths: %d\\ntime: %f[/center]\"%[GAME.deaths, GAME.get_playtime_seconds()]
+"
+
+[node name="Level1-3" type="Node2D"]
+script = SubResource("GDScript_poqm7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 646.0
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]THE END[/center]"
